@@ -45,7 +45,7 @@ def signup():
     driver.switch_to.default_content()
     driver.switch_to.frame('likes_iframe_signup')
 
-    driver.implicitly_wait(30)
+    driver.implicitly_wait(3)
 
     driver.find_element_by_name('ad_urls').send_keys(FB_URL)
     driver.find_element_by_name('site_title').send_keys(PAGE_TITLE)

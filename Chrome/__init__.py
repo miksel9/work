@@ -5,7 +5,7 @@ import unittest
 
 def main():
 
-    unittest.TestSuite(publisher_signup.signup())
+    unittest.TestSuite(advertiser_signup.signup(), publisher_signup.signup())
 
 if __name__ == "__main__":
     main()
