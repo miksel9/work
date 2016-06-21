@@ -45,7 +45,7 @@ def signup():
     driver.switch_to.default_content()
     driver.switch_to.frame('likes_iframe_signup')
 
-    driver.implicitly_wait(3)
+    driver.implicitly_wait(30)
 
     driver.find_element_by_name('ad_urls').send_keys(FB_URL)
     driver.find_element_by_name('site_title').send_keys(PAGE_TITLE)
@@ -56,7 +56,10 @@ def signup():
     driver.switch_to.default_content()
     driver.switch_to.frame('likes_iframe_signup')
 
-    wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'format_option'))).click()
+    wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'format_option')))
+
+    templates = driver.find_elements_by_class_name('format_option')
+    random.choice(templates).click()
 
     color_schemes = driver.find_elements_by_class_name('palette_option')
     random.choice(color_schemes).click()
