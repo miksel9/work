@@ -56,9 +56,7 @@ def signup():
     driver.switch_to.default_content()
     driver.switch_to.frame('likes_iframe_signup')
 
-    templates = wait.until(EC.el((By.CLASS_NAME, 'format_option')))
-    random.choice(templates).click()
-
+    wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'format_option'))).click()
 
     color_schemes = driver.find_elements_by_class_name('palette_option')
     random.choice(color_schemes).click()
