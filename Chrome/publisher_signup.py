@@ -59,23 +59,31 @@ def signup():
     wait.until(EC.element_to_be_clickable((By.CLASS_NAME, 'format_option')))
 
     templates = driver.find_elements_by_class_name('format_option')
+
+    assert len(templates) == 8
+
     random.choice(templates).click()
 
     color_schemes = driver.find_elements_by_class_name('palette_option')
+
+    assert len(color_schemes) == 6
+
     random.choice(color_schemes).click()
 
     driver.find_element_by_id('finish_button').click()
 
     #publisher main page
 
-    alert = wait.until(EC.presence_of_element_located((By.ID, 'partner_login_form')))
-    audience = wait.until(EC.presence_of_element_located((By.ID, 'gender_audience_wrapper')))
+    wait.until(EC.presence_of_element_located((By.ID, 'partner_login_form')))
+    wait.until(EC.presence_of_element_located((By.ID, 'gender_audience_wrapper')))
 
-    wait.until(EC.element_located_to_be_selected((By.TAG_NAME, 'label'))).click()
+    target_audience = driver.find_elements_by_class_name('bar_button')
 
-    alert.find_element_by_id('save_partner_login_form').click()
+    assert len(target_audience) == 5
 
-    #driver.quit()
+    random.choice(target_audience).click()
 
+    driver.find_element_by_id('save_partner_login_button').click()
 
+    driver.quit()
 
