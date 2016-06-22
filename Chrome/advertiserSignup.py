@@ -25,7 +25,7 @@ def signup():
 
     driver = webdriver.Chrome()
 
-    wait = WebDriverWait(driver, 3)
+    wait = WebDriverWait(driver, 10)
 
     #navigate to mylikes.com and select 'Sign Up'
 
