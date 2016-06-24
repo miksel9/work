@@ -1,10 +1,9 @@
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import time
 import random
+import time
 
 CURRENT_TIME = time.strftime('%m%d%H%M')
 EMAIL_ADDRESS = "mikhail+pub{0}@mylikes.com".format(str(CURRENT_TIME))

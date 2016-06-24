@@ -39,10 +39,10 @@ def signup():
 
     #advertiser sign-up form page 1
 
-    driver.find_element_by_name("email").send_keys(EMAIL_ADDRESS)
-    driver.find_element_by_name("name").send_keys(LOGIN_NAME)
-    driver.find_element_by_name("nickname").send_keys(LOGIN_NAME)
-    driver.find_element_by_name("password").send_keys(LOGIN_PASSWORD)
+    driver.find_element_by_id("email").send_keys(EMAIL_ADDRESS)
+    driver.find_element_by_id("name").send_keys(LOGIN_NAME)
+    driver.find_element_by_id("nickname").send_keys(LOGIN_NAME)
+    driver.find_element_by_id("password").send_keys(LOGIN_PASSWORD)
 
     driver.find_element_by_xpath(".//*[@id='signup_publisher_form']/div[2]/input").click()
 
